@@ -473,9 +473,9 @@ HRESULT CBodyBasics::EnsureDirect2DResources()
         m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green, 1.0f), &m_pBrushBoneTracked);
         m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Gray, 1.0f), &m_pBrushBoneInferred);
 
-        m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red, 0.5f), &m_pBrushHandClosed);
-        m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green, 0.5f), &m_pBrushHandOpen);
-        m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Blue, 0.5f), &m_pBrushHandLasso);
+        //m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red, 0.5f), &m_pBrushHandClosed);
+        //m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green, 0.5f), &m_pBrushHandOpen);
+        //m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Blue, 0.5f), &m_pBrushHandLasso);
     }
 
     return hr;
@@ -493,9 +493,9 @@ void CBodyBasics::DiscardDirect2DResources()
     SafeRelease(m_pBrushBoneTracked);
     SafeRelease(m_pBrushBoneInferred);
 
-    SafeRelease(m_pBrushHandClosed);
-    SafeRelease(m_pBrushHandOpen);
-    SafeRelease(m_pBrushHandLasso);
+    //SafeRelease(m_pBrushHandClosed);
+    //SafeRelease(m_pBrushHandOpen);
+    //SafeRelease(m_pBrushHandLasso);
 }
 
 /// <summary>
@@ -526,7 +526,7 @@ void CBodyBasics::DrawBody(const Joint* pJoints, const D2D1_POINT_2F* pJointPoin
 {
     // Draw the bones
 
-    // Torso
+    /* Torso
     DrawBone(pJoints, pJointPoints, JointType_Head, JointType_Neck);
     DrawBone(pJoints, pJointPoints, JointType_Neck, JointType_SpineShoulder);
     DrawBone(pJoints, pJointPoints, JointType_SpineShoulder, JointType_SpineMid);
@@ -534,19 +534,19 @@ void CBodyBasics::DrawBody(const Joint* pJoints, const D2D1_POINT_2F* pJointPoin
     DrawBone(pJoints, pJointPoints, JointType_SpineShoulder, JointType_ShoulderRight);
     DrawBone(pJoints, pJointPoints, JointType_SpineShoulder, JointType_ShoulderLeft);
     DrawBone(pJoints, pJointPoints, JointType_SpineBase, JointType_HipRight);
-    DrawBone(pJoints, pJointPoints, JointType_SpineBase, JointType_HipLeft);
+    DrawBone(pJoints, pJointPoints, JointType_SpineBase, JointType_HipLeft);*/
     
     // Right Arm    
     DrawBone(pJoints, pJointPoints, JointType_ShoulderRight, JointType_ElbowRight);
     DrawBone(pJoints, pJointPoints, JointType_ElbowRight, JointType_WristRight);
-    DrawBone(pJoints, pJointPoints, JointType_WristRight, JointType_HandRight);
+    /*DrawBone(pJoints, pJointPoints, JointType_WristRight, JointType_HandRight);
     DrawBone(pJoints, pJointPoints, JointType_HandRight, JointType_HandTipRight);
-    DrawBone(pJoints, pJointPoints, JointType_WristRight, JointType_ThumbRight);
+    DrawBone(pJoints, pJointPoints, JointType_WristRight, JointType_ThumbRight);*/
 
     // Left Arm
     DrawBone(pJoints, pJointPoints, JointType_ShoulderLeft, JointType_ElbowLeft);
     DrawBone(pJoints, pJointPoints, JointType_ElbowLeft, JointType_WristLeft);
-    DrawBone(pJoints, pJointPoints, JointType_WristLeft, JointType_HandLeft);
+    /*DrawBone(pJoints, pJointPoints, JointType_WristLeft, JointType_HandLeft);
     DrawBone(pJoints, pJointPoints, JointType_HandLeft, JointType_HandTipLeft);
     DrawBone(pJoints, pJointPoints, JointType_WristLeft, JointType_ThumbLeft);
 
@@ -558,7 +558,7 @@ void CBodyBasics::DrawBody(const Joint* pJoints, const D2D1_POINT_2F* pJointPoin
     // Left Leg
     DrawBone(pJoints, pJointPoints, JointType_HipLeft, JointType_KneeLeft);
     DrawBone(pJoints, pJointPoints, JointType_KneeLeft, JointType_AnkleLeft);
-    DrawBone(pJoints, pJointPoints, JointType_AnkleLeft, JointType_FootLeft);
+    DrawBone(pJoints, pJointPoints, JointType_AnkleLeft, JointType_FootLeft);*/
 
     // Draw the joints
     for (int i = 0; i < JointType_Count; ++i)
