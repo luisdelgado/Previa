@@ -273,7 +273,7 @@ HRESULT CBodyBasics::InitializeDefaultSensor()
     hr = GetDefaultKinectSensor(&m_pKinectSensor);
     if (FAILED(hr))
     {
-		printf("Estou aqui: Erro");
+		
         return hr;
     }
 
@@ -283,7 +283,6 @@ HRESULT CBodyBasics::InitializeDefaultSensor()
         IBodyFrameSource* pBodyFrameSource = NULL;
 
         hr = m_pKinectSensor->Open();
-		printf("Estou aqui: Acerto1");
 
 
         if (SUCCEEDED(hr))
