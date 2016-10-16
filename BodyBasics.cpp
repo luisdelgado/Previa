@@ -188,6 +188,7 @@ void CBodyBasics::Update()
     }
 
     SafeRelease(pBodyFrame);
+	//atualizando commits
 }
 
 /// <summary>
@@ -402,7 +403,7 @@ void CBodyBasics::ProcessBody(INT64 nTime, int nBodyCount, IBody** ppBodies)
 
         WCHAR szStatusMessage[64];
         StringCchPrintf(szStatusMessage, _countof(szStatusMessage), L" FPS = %0.2f    Time = %I64d", fps, (nTime - m_nStartTime));
-
+	
         if (SetStatusMessage(szStatusMessage, 1000, false))
         {
             m_nLastCounter = qpcNow.QuadPart;
